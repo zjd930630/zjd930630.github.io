@@ -367,120 +367,17 @@
 
       
         
-          
-            <h1 id="1-什么是git"><a href="#1-什么是git" class="headerlink" title="1. 什么是git"></a>1. 什么是git</h1><blockquote>
+          <h1 id="1-什么是git"><a href="#1-什么是git" class="headerlink" title="1. 什么是git"></a>1. 什么是git</h1><blockquote>
 <p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
 </blockquote>
-<p>Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
-<h1 id="2-为什么要学git"><a href="#2-为什么要学git" class="headerlink" title="2. 为什么要学git"></a>2. 为什么要学git</h1><blockquote>
-<p>你是否经常因为修改文件而烦躁，<br> 你是否经常因为误删文件而原地爆炸，<br> 你是否经常因为创建过多副本而找不到自己想要的文件，<br> 你是否经常因为删除可能会用到的文件而犹豫不决，<br> 你是否经常因为协同办公的低效而浪费大量时间，<br> 试试git吧，它会让你的人生更加精彩~</p>
-</blockquote>
-<p>ok，言归正传，git的优点如下：</p>
-<ol>
-<li><strong>高效</strong><br>它运行命令时间很短，可以极大效率的提升我们的工作效率，让我们可以把更多的时间用在别的地方。</li>
-<li><strong>离线工作</strong><br>git支持离线操作，git可以在本地完成所有的操作（提交、合并、查看历史记录等），无需网络连接。</li>
-<li><strong>后悔药</strong><br>俗话说：世上没有后悔药。但是git却有，几乎无论什么错误，我们都可以通过git的命令来挽回。</li>
-<li><strong>团队协作更流畅</strong><br>git使得团队的工作更加顺利。git可以给团队提供分支来便于对项目进行延伸的操作，使得团队之间的相互工作既独立又紧密结合。</li>
-<li><strong>Fashion &amp; 装X</strong><br>当别人还在不断创建副本、误删文件等原因低效工作的时候，你可以轻松的敲着代码来工作。可谓是低调中带着奢华，装得一手好X。</li>
-</ol>
-<h1 id="3-Git简明语法"><a href="#3-Git简明语法" class="headerlink" title="3.Git简明语法"></a>3.Git简明语法</h1><h2 id="3-1-Git安装完成后的设置"><a href="#3-1-Git安装完成后的设置" class="headerlink" title="3.1 Git安装完成后的设置"></a>3.1 Git安装完成后的设置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;Your Name&quot;                ——设置你的名字</div><div class="line">$ git config --global user.email &quot;email@example.com&quot;       ——设置你的邮箱</div></pre></td></tr></table></figure>
-<h2 id="3-2-创建版本库"><a href="#3-2-创建版本库" class="headerlink" title="3.2 创建版本库"></a>3.2 创建版本库</h2><ol>
-<li><p>选择一个合适的地方，创建一个空的目录【确保目录名（包括父目录）不包含中文】</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mkdir xxx(目录名)       ——创建目录xxx【可使用c/文件名/目录名的格式创建到你想要的地方】</div><div class="line">$ cd xxx(目录名)          ——切换工作目录至xxx</div><div class="line">$ pwd                     ——以绝对路径方式显示当前工作目录</div></pre></td></tr></table></figure>
-</li>
-<li><p>使这个目录变成Git可以管理的仓库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init          ——创造一个git目录，初始化仓库</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>如果你没有看到.git目录，那是因为这个目录默认是隐藏的，用ls -ah命令就可以看见。</p>
-<h2 id="3-3-添加文件到Git仓库【只能跟踪文本文件的改动】"><a href="#3-3-添加文件到Git仓库【只能跟踪文本文件的改动】" class="headerlink" title="3.3 添加文件到Git仓库【只能跟踪文本文件的改动】"></a>3.3 添加文件到Git仓库【只能跟踪文本文件的改动】</h2><p>①用命令git add告诉Git，把文件添加到仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add xxx(文件名+后缀)          ——添加文件，可一次添加多个文件</div></pre></td></tr></table></figure></p>
-<p>②用命令git commit告诉Git，把文件提交到仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m &quot;xxx&quot;[提交说明]     ——将文件提交，可一次提交多个文件</div></pre></td></tr></table></figure></p>
-<h2 id="3-4-文件状态查看-amp-修改后的文件提交"><a href="#3-4-文件状态查看-amp-修改后的文件提交" class="headerlink" title="3.4 文件状态查看&amp;修改后的文件提交"></a>3.4 文件状态查看&amp;修改后的文件提交</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git status                       ——查看文件当前状态</div><div class="line">$ git diff xxx(文件名&amp;后缀)         ——显示改动的区别</div></pre></td></tr></table></figure>
-<blockquote>
-<p>提交修改—①git add  ②git commit</p>
-</blockquote>
-<h2 id="3-5-查看历史修改状况-amp-版本回退"><a href="#3-5-查看历史修改状况-amp-版本回退" class="headerlink" title="3.5 查看历史修改状况&amp;版本回退"></a>3.5 查看历史修改状况&amp;版本回退</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git log                       ——显示提交的更改记录</div><div class="line">$ git log --pretty=oneline      ——显示简化后提交的更改记录</div></pre></td></tr></table></figure>
-<p>HEAD表示当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard HEAD^        ——回退到上一版本</div><div class="line">$ git reset --hard 版本号       ——回退到指定版本</div><div class="line">$ git reflog                    ——查看每次的操作记录</div><div class="line">$ cat xxx(文件名&amp;后缀)           ——查看文件内容</div></pre></td></tr></table></figure></p>
-<h2 id="3-6-工作区和暂存区"><a href="#3-6-工作区和暂存区" class="headerlink" title="3.6 工作区和暂存区"></a>3.6 工作区和暂存区</h2><ol>
-<li>工作区（Working Directory）：编辑文档的地方，电脑里能看见的目录</li>
-<li><p>版本库（Repository）：工作区中的一个隐藏目录.git，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。</p>
-<p> git add作用是将文件添加进去，实际上就是把文件修改添加到暂存区；<br> git commit作用是提交更改，实际上就是把暂存区的所有内容提交到当前分支。</p>
-<blockquote>
-<p>注：必须先 git add 再 git commit ，否则文件的修改情况不会添加到版本库里。</p>
-</blockquote>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git diff HEAD --xxx(文件名&amp;后缀)      ——查看工作区和版本库里面最新版本的区别</div></pre></td></tr></table></figure>
-</code></pre></li>
-</ol>
-<h2 id="3-7-撤销修改"><a href="#3-7-撤销修改" class="headerlink" title="3.7 撤销修改"></a>3.7 撤销修改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git checkout -- xxx(文件名&amp;后缀) ——丢弃工作区的修改</div><div class="line">$ git reset HEAD xxx(文件名&amp;后缀) ——将暂存区的修改撤销</div></pre></td></tr></table></figure>
-<blockquote>
-<p>总结：</p>
-<ol>
-<li>当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – file</li>
-<li>当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，第一步用命令git reset HEAD file，然后执行git checkout – file</li>
-<li>已经提交了不合适的修改到版本库时，想要撤销本次提交，用命令git reset –hard HEAD^ 或者 git reset –hard 版本号来进行版本回退</li>
-</ol>
-</blockquote>
-<h2 id="3-8-删除文件"><a href="#3-8-删除文件" class="headerlink" title="3.8 删除文件"></a>3.8 删除文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rm xxx(文件名&amp;后缀)                        ——删除工作区里的文件</div><div class="line">$ git checkout -- xxx(文件名&amp;后缀)           ——恢复工作区的修改或删除（实质上是用版本库中的替换工作区的文件）</div></pre></td></tr></table></figure>
-<blockquote>
-<p>从版本库中移除文件分为两步：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git rm xxx(文件名&amp;后缀) ——移除版本库中的文件          </div><div class="line">$ git commit -m &quot;xxx&quot;[提交说明] ——提交该请求，完成删除</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>PS：上述移除文件可以通过 git reset –hard 版本号 实现撤回</p>
-<h2 id="3-9-远程仓库"><a href="#3-9-远程仓库" class="headerlink" title="3.9 远程仓库"></a>3.9 远程仓库</h2><ol>
-<li><p>准备工作：<br>①创建SSH Key。<br>在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;      一直按回车即可</div></pre></td></tr></table></figure>
-<p> ②登陆GitHub，打开“Account settings”—“SSH Keys”—“Add SSH Key”粘贴id_rsa.pub的内容，完成远程仓库工作前的设置。</p>
-</li>
-<li><p>添加远程库：<br>①首先在GitHub上创建一个新的仓库（注意输完名称后直接点击创建按钮！）<br>②将新建的仓库与本地的仓库相关联</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add origin git@github.com:(your name)/(rep name).git</div></pre></td></tr></table></figure>
-<p> ③将本地库的内容推送至远程库上</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push -u origin master</div></pre></td></tr></table></figure>
-<p> 此时，只要对本地修改文件进行了git commit，就可以使用git push origin master进行同步。</p>
-</li>
-<li><p>从远程库克隆：<br>①首先在GitHub上创建一个新的仓库（注意勾选Initialize this repository with a README按钮！）<br>②克隆出一个本地库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git clone git@github.com:(your name)/(rep name).git</div><div class="line">$ ls       ——查看库中有哪些文件</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="3-10-分支管理"><a href="#3-10-分支管理" class="headerlink" title="3.10 分支管理"></a>3.10 分支管理</h2><ol>
-<li><p>创建&amp;合并分支：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b 分支名             ——创造并切换至新分支【$ git branch 分支名（创建分支）+$ git checkout 分支名 】</div><div class="line">$ git branch                        ——查看当前分支</div><div class="line">$ git checkout master/分支名         ——切换分支</div><div class="line">$ git merge 分支名                   ——合并指定分支到当前分支</div><div class="line">$ git branch -d 分支名               ——删除分支</div></pre></td></tr></table></figure>
-</li>
-<li><p>解决冲突：<br>当master与分支都进行过修改时，合并分支会发生冲突，解决冲突之后，可以再次提交进行合并。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git log --graph --pretty=oneline --abbrev-commit       ——查看分支合并图</div></pre></td></tr></table></figure>
-</li>
-<li><p>分支管理策略：<br>合并分支时，加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git merge --no-ff -m &quot;merge with no-ff&quot; 分支名</div></pre></td></tr></table></figure>
-</li>
-<li><p>Bug分支：<br>我们可以通过一个新的临时分支来修复产生的bug，修复后，合并分支，然后将临时分支删除即可。<br>①若你有正在进行的工作又不想提交可以通过stash功能使现有的工作暂时隐藏起来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git stash                  ——储藏你当前的工作内容</div></pre></td></tr></table></figure>
-<p>②若没有的话，直接在master上新建一个分支进行bug的修复，修改完之后直接合并即可<br> ③恢复你正在进行的工作</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git stash list ——查看被储存工作的列表</div><div class="line">$  git stash pop ——恢复工作内容并删除stash中的内容</div><div class="line">$  git stash apply stash@&#123;序号&#125;——恢复工作内容但不删除stash中的内容</div></pre></td></tr></table></figure>
-</li>
-<li><p>Feature分支：<br>开发一个新的feature，最好新建一个分支，以防止中途feature取消。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch -D 分支名       ——强行删除未合并的分支</div></pre></td></tr></table></figure>
-</li>
-<li><p>多人协作：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git remote -v                       ——获取远程库抓取或获取origin的地址</div><div class="line">$ git push origin master/分支名        ——推送分支</div></pre></td></tr></table></figure>
-<p> ①master分支是主分支，因此要时刻与远程同步；<br> ②dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；<br> ③bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；<br> ④feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。</p>
-</li>
-</ol>
-<h2 id="3-11-标签管理"><a href="#3-11-标签管理" class="headerlink" title="3.11 标签管理"></a>3.11 标签管理</h2><ol>
-<li><p>创造标签：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ git branch                 ——查看分支状态</div><div class="line">$ git checkout master        ——切换至需要打标签的分支上</div><div class="line">$ git tag &lt;name&gt;             ——给当前版本打一个标签</div><div class="line">$ git tag &lt;name&gt; 版本号      ——给某版本打一个标签</div><div class="line">$ git tag                    ——查看所有标签</div><div class="line">$ git show &lt;tagname&gt;         ——查看标签信息</div><div class="line">$ git tag -a &lt;tagname&gt; -m &quot;xxx[说明文字]&quot; 版本号       ——给某版本打一个带说明的标签</div></pre></td></tr></table></figure>
-</li>
-<li><p>操作标签：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git tag -d &lt;tagname&gt;            ——删除标签</div><div class="line">$ git push origin &lt;tagname&gt;       ——推送标签至远程库  </div><div class="line">$ git push origin --tags          ——推送所有标签</div></pre></td></tr></table></figure>
-</li>
-<li><p>删除远程库标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git tag -d &lt;tagname&gt;</div><div class="line">$ git push origin :refs/tags/&lt;tagname&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="3-12-使用github"><a href="#3-12-使用github" class="headerlink" title="3.12 使用github"></a>3.12 使用github</h2><p>参加开源项目</p>
-<blockquote>
-<p>①Fork一个项目<br>②$ git clone git@github.com:(your name)/(rep name).git<br>③可以修改提交自己的见解<br>④发起一个pull request来参与项目</p>
-</blockquote>
-<h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><p>如果想要了解更多，可以参阅下列文档。<br><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">1.廖雪峰学习网站Git教程（主要学习文档）</a><br><a href="http://gitref.org/zh/index.html" target="_blank" rel="external">2.Git官方Git 参考手册</a></p>
-
-          
+<p>Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/12/Git学习笔记/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -619,71 +516,14 @@
 
       
         
-          
-            <h1 id="1-什么是Markdown"><a href="#1-什么是Markdown" class="headerlink" title="1. 什么是Markdown"></a>1. 什么是Markdown</h1><p>Markdown 是一种轻量级标记语言，目标是实现「易读易写」。<br>Markdown 能够以纯文本形式（易读、易写、易更改）编写文档，并最终以HTML格式发布。</p>
-<h1 id="2-为什么要使用Markdown"><a href="#2-为什么要使用Markdown" class="headerlink" title="2. 为什么要使用Markdown"></a>2. 为什么要使用Markdown</h1><p>谈及到未来最重要的能力，很多人都会选择编程、英语、写作，对此我也非常认同。</p>
-<blockquote>
-<p>英语是我们打开世界的大门的工具<br>写作是我们对世界认知的一种表达方式<br>编程是我们连接世界的接口，拥有创造世界的能力</p>
-</blockquote>
-<p>有人会说，我们用Word、TXT编辑器等也可以啊，但是Word的排版、TXT没有明显区分的样式等问题使得我们写文章的时候时常觉得削微有些蛋疼。</p>
-<p>这时候，Markdown就应运而生了。Markdown 的理念是，能让文档更容易读、写和随意改。它极大的满足了人们的写作需求，使得写作变得更加轻松简单，有点“妈妈再也不用担心我的写作”的意思。</p>
-<p>Markdown的优点总结起来有以下几点：</p>
-<blockquote>
-<p>1.易读（看着舒服）、易写（语法简单）、易更改<br>2.能让我们专注于写作的文字内容而不是排版样式<br>3.格式转换方便，Markdown 的文本可以轻松地转换为 html、电子书等格式<br>4.纯文本内容，兼容所有的文本编辑器，能跨平台使用</p>
-</blockquote>
-<h1 id="3-Markdown简明语法"><a href="#3-Markdown简明语法" class="headerlink" title="3. Markdown简明语法"></a>3. Markdown简明语法</h1><h2 id="3-1-标题"><a href="#3-1-标题" class="headerlink" title="3.1 标题"></a>3.1 标题</h2><ol>
-<li>利用 <code>=</code>（最高阶标题）和 <code>-</code>（第二阶标题）<br><img src="http://op89jormi.bkt.clouddn.com/17-5-1/14297700-file_1493601173890_ca27.jpg" alt=""></li>
-<li>在行首插入 1 到 6 个 <code>#</code>，对应 1 ~ 6 级标题<br><img src="http://op89jormi.bkt.clouddn.com/17-5-1/40013627-file_1493601174013_cb8f.jpg" alt=""><br>注：符号<code>#</code>后面需要有空格</li>
-</ol>
-<h2 id="3-2-段落及换行"><a href="#3-2-段落及换行" class="headerlink" title="3.2 段落及换行"></a>3.2 段落及换行</h2><p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行。Markdown 允许段落内的强迫换行（插入换行符）。</p>
-<h2 id="3-3-区块引用"><a href="#3-3-区块引用" class="headerlink" title="3.3 区块引用"></a>3.3 区块引用</h2><ol>
-<li>在每行的最前面加上 <code>&gt;</code> 就能实现引用。<br><img src="http://op89jormi.bkt.clouddn.com/17-5-1/7520264-file_1493601354870_1215d.jpg" alt=""></li>
-<li>当然你只在段落的开头加上 <code>&gt;</code> 也能实现引用的效果。<br><img src="http://op89jormi.bkt.clouddn.com/17-5-1/32320559-file_1493601354982_999b.jpg" alt=""></li>
-<li>引用也可以实现嵌套，只需根据层次加上不同的 <code>&gt;</code> 即可。<br><img src="http://op89jormi.bkt.clouddn.com/17-5-1/71795888-file_1493601355117_fa8b.jpg" alt=""></li>
-<li>引用的区域内可以使用其他的markdown语法。<br><img src="http://op89jormi.bkt.clouddn.com/17-5-1/98662545-file_1493601355229_1766b.jpg" alt=""><br>注：普通段落与引用段落需要存在换行</li>
-</ol>
-<h2 id="3-4-列表"><a href="#3-4-列表" class="headerlink" title="3.4 列表"></a>3.4 列表</h2><ol>
-<li>无序列表使用星号 <code>*</code> 、加号 <code>+</code> 或是减号 <code>-</code> 作为列表标记。<br><img src="http://op89jormi.bkt.clouddn.com/17-5-1/89590727-file_1493601174598_11039.jpg" alt=""></li>
-<li>有序列表则使用数字接着一个英文句点<code>.</code>。<br><img src="http://op89jormi.bkt.clouddn.com/17-5-1/8135849-file_1493601355341_7078.jpg" alt=""><br>注：符号 （<code>*</code>、<code>+</code>、<code>-</code>、<code>.</code>） 后需要有空格</li>
-</ol>
-<h2 id="3-5-代码"><a href="#3-5-代码" class="headerlink" title="3.5 代码"></a>3.5 代码</h2><ol>
-<li>如果要标记一小段行内代码，你可以用反引号把它包起来（`）</li>
-<li>如果要标记一段代码，你可以用（```）把它包起来<br><img src="http://op89jormi.bkt.clouddn.com/17-5-1/92771706-file_1493601174711_14431.jpg" alt=""></li>
-</ol>
-<h2 id="3-6-分割线"><a href="#3-6-分割线" class="headerlink" title="3.6 分割线"></a>3.6 分割线</h2><p>在一行中用三个以上的星号<code>*</code>、减号<code>-</code>、底线<code>_</code>来建立一个分隔线，行内不能有其他东西。<br><img src="http://op89jormi.bkt.clouddn.com/17-5-1/13630301-file_1493601174131_4d2c.jpg" alt=""></p>
-<h2 id="3-7-链接"><a href="#3-7-链接" class="headerlink" title="3.7 链接"></a>3.7 链接</h2><p>Markdown 支持两种形式的链接语法： 行内式和参考式两种形式。<br>但不管是哪一种，链接文字都是用方括号<code>[]</code> 来标记。</p>
-<ol>
-<li><p>行内式<br>建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可。</p>
-<blockquote>
-<p>[显示文本]（链接地址）</p>
-</blockquote>
-</li>
-<li><p>参考式<br>参考式的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记。</p>
-<blockquote>
-<p>[显示文本][1]<br>[1]：链接地址</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="http://op89jormi.bkt.clouddn.com/17-5-1/6121616-file_1493601174243_12ee1.jpg" alt=""></p>
-<h2 id="3-8-强调"><a href="#3-8-强调" class="headerlink" title="3.8 强调"></a>3.8 强调</h2><p>Markdown 使用星号<code>*</code>和底线<code>_</code>作为标记强调字词的符号，使用一个表示斜体，使用两个表示粗体。<br><img src="http://op89jormi.bkt.clouddn.com/17-5-1/93796154-file_1493601174361_cb8a.jpg" alt=""></p>
-<h2 id="3-9-图片"><a href="#3-9-图片" class="headerlink" title="3.9 图片"></a>3.9 图片</h2><p>Markdown 使用一种和链接很相似的语法来标记图片，同样也允许两种样式： 行内式和参考式。</p>
-<ol>
-<li><p>行内式</p>
-<blockquote>
-<p>！[显示文本]（链接地址）</p>
-</blockquote>
-</li>
-<li><p>参考式</p>
-<blockquote>
-<p>！[显示文本][1]<br>[1]：链接地址</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="http://op89jormi.bkt.clouddn.com/17-5-1/64826433-file_1493601174477_10ac1.jpg" alt=""></p>
-<h2 id="3-10-反斜杠"><a href="#3-10-反斜杠" class="headerlink" title="3.10 反斜杠"></a>3.10 反斜杠</h2><p>当你想用一些在语法中有其它意义的符号时，可以使用反斜杠进行转义。<br><img src="http://op89jormi.bkt.clouddn.com/17-5-1/12267399-file_1493601355481_ddd5.jpg" alt=""></p>
-<h1 id="4-参考文档"><a href="#4-参考文档" class="headerlink" title="4. 参考文档"></a>4. 参考文档</h1><p>如果想要了解更多，可以参阅下列文档。<br><a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">[1]Markdown 语法说明 (简体中文版)</a><br><a href="http://daringfireball.net/projects/markdown/syntax" target="_blank" rel="external">[2]Markdown官方文档</a>          </p>
-
-          
+          <h1 id="1-什么是Markdown"><a href="#1-什么是Markdown" class="headerlink" title="1. 什么是Markdown"></a>1. 什么是Markdown</h1><p>Markdown 是一种轻量级标记语言，目标是实现「易读易写」。<br>Markdown 能够以纯文本形式（易读、易写、易更改）编写文档，并最终以HTML格式发布。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/30/Markdown学习笔记/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
