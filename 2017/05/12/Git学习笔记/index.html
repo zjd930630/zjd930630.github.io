@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="en">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/12/Git学习笔记/index.html">
 <meta property="og:site_name" content="Jacob&#39;s Blog">
 <meta property="og:description" content="1. 什么是git Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.  Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或">
-<meta property="og:updated_time" content="2017-05-13T06:42:38.202Z">
+<meta property="og:updated_time" content="2017-07-21T01:17:49.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git学习笔记">
 <meta name="twitter:description" content="1. 什么是git Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.  Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或">
@@ -114,7 +114,7 @@
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -137,7 +137,7 @@
   <title>Git学习笔记 | Jacob's Blog</title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -200,7 +200,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
           </a>
         </li>
       
@@ -210,7 +210,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            分类
           </a>
         </li>
       
@@ -220,7 +220,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            归档
           </a>
         </li>
       
@@ -230,7 +230,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -240,7 +240,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            About
+            关于
           </a>
         </li>
       
@@ -307,9 +307,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-12T20:04:13+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-12T20:04:13+08:00">
                 2017-05-12
               </time>
             
@@ -328,7 +328,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -409,7 +409,7 @@
 <pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git diff HEAD --xxx(文件名&amp;后缀)      ——查看工作区和版本库里面最新版本的区别</div></pre></td></tr></table></figure>
 </code></pre></li>
 </ol>
-<h2 id="3-7-撤销修改"><a href="#3-7-撤销修改" class="headerlink" title="3.7 撤销修改"></a>3.7 撤销修改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git checkout -- xxx(文件名&amp;后缀) ——丢弃工作区的修改</div><div class="line">$ git reset HEAD xxx(文件名&amp;后缀) ——将暂存区的修改撤销</div></pre></td></tr></table></figure>
+<h2 id="3-7-撤销修改"><a href="#3-7-撤销修改" class="headerlink" title="3.7 撤销修改"></a>3.7 撤销修改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git checkout -- xxx(文件名&amp;后缀)         ——丢弃工作区的修改</div><div class="line">$ git reset HEAD xxx(文件名&amp;后缀)          ——将暂存区的修改撤销</div></pre></td></tr></table></figure>
 <blockquote>
 <p>总结：</p>
 <ol>
@@ -418,9 +418,9 @@
 <li>已经提交了不合适的修改到版本库时，想要撤销本次提交，用命令git reset –hard HEAD^ 或者 git reset –hard 版本号来进行版本回退</li>
 </ol>
 </blockquote>
-<h2 id="3-8-删除文件"><a href="#3-8-删除文件" class="headerlink" title="3.8 删除文件"></a>3.8 删除文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rm xxx(文件名&amp;后缀)                        ——删除工作区里的文件</div><div class="line">$ git checkout -- xxx(文件名&amp;后缀)           ——恢复工作区的修改或删除（实质上是用版本库中的替换工作区的文件）</div></pre></td></tr></table></figure>
+<h2 id="3-8-删除文件"><a href="#3-8-删除文件" class="headerlink" title="3.8 删除文件"></a>3.8 删除文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rm xxx(文件名&amp;后缀)                     ——删除工作区里的文件</div><div class="line">$ git checkout -- xxx(文件名&amp;后缀)        ——恢复工作区的修改或删除（实质上是用版本库中的替换工作区的文件）</div></pre></td></tr></table></figure>
 <blockquote>
-<p>从版本库中移除文件分为两步：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git rm xxx(文件名&amp;后缀) ——移除版本库中的文件          </div><div class="line">$ git commit -m &quot;xxx&quot;[提交说明] ——提交该请求，完成删除</div></pre></td></tr></table></figure></p>
+<p>从版本库中移除文件分为两步：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git rm xxx(文件名&amp;后缀)            ——移除版本库中的文件          </div><div class="line">$ git commit -m &quot;xxx&quot;[提交说明]      ——提交该请求，完成删除</div></pre></td></tr></table></figure></p>
 </blockquote>
 <p>PS：上述移除文件可以通过 git reset –hard 版本号 实现撤回</p>
 <h2 id="3-9-远程仓库"><a href="#3-9-远程仓库" class="headerlink" title="3.9 远程仓库"></a>3.9 远程仓库</h2><ol>
@@ -451,7 +451,7 @@
 <li><p>Bug分支：<br>我们可以通过一个新的临时分支来修复产生的bug，修复后，合并分支，然后将临时分支删除即可。<br>①若你有正在进行的工作又不想提交可以通过stash功能使现有的工作暂时隐藏起来</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git stash                  ——储藏你当前的工作内容</div></pre></td></tr></table></figure>
 <p>②若没有的话，直接在master上新建一个分支进行bug的修复，修改完之后直接合并即可<br> ③恢复你正在进行的工作</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git stash list ——查看被储存工作的列表</div><div class="line">$  git stash pop ——恢复工作内容并删除stash中的内容</div><div class="line">$  git stash apply stash@&#123;序号&#125;——恢复工作内容但不删除stash中的内容</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git stash list                   ——查看被储存工作的列表</div><div class="line">$ git stash pop                    ——恢复工作内容并删除stash中的内容</div><div class="line">$ git stash apply stash@&#123;序号&#125;     ——恢复工作内容但不删除stash中的内容</div></pre></td></tr></table></figure>
 </li>
 <li><p>Feature分支：<br>开发一个新的feature，最好新建一个分支，以防止中途feature取消。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch -D 分支名       ——强行删除未合并的分支</div></pre></td></tr></table></figure>
@@ -529,6 +529,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/07/12/关于连续的数字或字母不会自动换行的问题/" rel="prev" title="关于连续的数字或字母不会自动换行的问题">
+                关于连续的数字或字母不会自动换行的问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -576,10 +580,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -591,7 +595,7 @@
                alt="Jacob.D" />
           <p class="site-author-name" itemprop="name">Jacob.D</p>
            
-              <p class="site-description motion-element" itemprop="description">You Still Have Lots More To Work On</p>
+              <p class="site-description motion-element" itemprop="description">Stay Hungry , Stay Foolish .</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -599,8 +603,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
@@ -610,8 +614,8 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
               </a>
             </div>
           
@@ -621,8 +625,8 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
               </a>
             </div>
           
