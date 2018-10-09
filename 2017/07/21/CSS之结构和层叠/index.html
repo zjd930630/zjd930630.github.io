@@ -93,14 +93,14 @@
 <meta name="description" content="1. 特殊性对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明。如果一个元素有两个或多个冲突的的属性声明，那么有最高特殊性的声明就会胜出。">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS之结构与层叠">
+<meta property="og:title" content="CSS 之结构与层叠">
 <meta property="og:url" content="http://yoursite.com/2017/07/21/CSS之结构和层叠/index.html">
 <meta property="og:site_name" content="Jacob&#39;s Blog">
 <meta property="og:description" content="1. 特殊性对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明。如果一个元素有两个或多个冲突的的属性声明，那么有最高特殊性的声明就会胜出。">
 <meta property="og:image" content="http://op89jormi.bkt.clouddn.com/17-7-21/99300230.jpg">
-<meta property="og:updated_time" content="2017-07-21T07:57:14.129Z">
+<meta property="og:updated_time" content="2018-10-09T13:34:05.755Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS之结构与层叠">
+<meta name="twitter:title" content="CSS 之结构与层叠">
 <meta name="twitter:description" content="1. 特殊性对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明。如果一个元素有两个或多个冲突的的属性声明，那么有最高特殊性的声明就会胜出。">
 <meta name="twitter:image" content="http://op89jormi.bkt.clouddn.com/17-7-21/99300230.jpg">
 
@@ -136,7 +136,7 @@
 
 
 
-  <title>CSS之结构与层叠 | Jacob's Blog</title>
+  <title>CSS 之结构与层叠 | Jacob's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -296,7 +296,7 @@
             
             
               
-                CSS之结构与层叠
+                CSS 之结构与层叠
               
             
           </h1>
@@ -368,33 +368,19 @@
       
 
       
-        <h1 id="1-特殊性"><a href="#1-特殊性" class="headerlink" title="1. 特殊性"></a>1. 特殊性</h1><p>对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明。如果一个元素有两个或多个冲突的的属性声明，那么有最高特殊性的声明就会胜出。<br><a id="more"></a><br>选择器的特殊性由选择器本身的组件确定。特殊性表述为四个部分， 数字化为0，0，0，0。</p>
+        <h1 id="1-特殊性"><a href="#1-特殊性" class="headerlink" title="1. 特殊性"></a>1. 特殊性</h1><p>对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明。如果一个元素有两个或多个冲突的的属性声明，那么有最高特殊性的声明就会胜出。<br><a id="more"></a><br>选择器的特殊性由选择器本身的组件确定。特殊性表述为四个部分， 数字化为 0，0，0，0。</p>
 <blockquote>
-<p>一个选择器的具体特殊性如下确定：</p>
-<ol>
-<li>对于选择器中给定的各个ID属性值，加0，1，0，0。</li>
-<li>对于选择器中给定的各个类属性值、属性选择或伪类，加0，0，1，0。</li>
-<li>对于选择器中给定的各个元素和伪元素，加0，0，0，1。</li>
-<li>结合符合通配选择器对特殊性没有任何贡献。</li>
-<li>通配选择器对一个选择器的特殊性没有贡献，其特殊性为0，0，0，0。</li>
-<li>内联样式的特殊性为1，0，0，0。</li>
-</ol>
+<p>一个选择器的具体特殊性如下确定：<br>① 对于选择器中给定的各个 ID 属性值，加 0，1，0，0。<br>② 对于选择器中给定的各个类属性值、属性选择或伪类，加 0，0，1，0。<br>③ 对于选择器中给定的各个元素和伪元素，加 0，0，0，1。<br>④ 结合符合通配选择器对特殊性没有任何贡献。<br>⑤ 通配选择器对一个选择器的特殊性没有贡献，其特殊性为 0，0，0，0。<br>⑥ 内联样式的特殊性为 1，0，0，0。</p>
 </blockquote>
-<p><img src="http://op89jormi.bkt.clouddn.com/17-7-21/99300230.jpg" alt=""><br>有时某个声明十分重要，超过了其他所有声明，可以在声明结束分号之前插入! important来进行重要声明（注意! important的位置，错误的位置会使声明失效）。如果一个重要声明和一个非重要声明冲突，胜出的总是重要声明。</p>
+<p><img src="http://op89jormi.bkt.clouddn.com/17-7-21/99300230.jpg" alt=""><br>有时某个声明十分重要，超过了其他所有声明，可以在声明结束分号之前插入 <code>!important</code>来进行重要声明（注意 <code>!important</code> 的位置，错误的位置会使声明失效）。如果一个重要声明和一个非重要声明冲突，胜出的总是重要声明。</p>
 <h1 id="2-继承"><a href="#2-继承" class="headerlink" title="2. 继承"></a>2. 继承</h1><p>继承是一个元素向其后代元素传递属性值所采用的机制。<br>但是并不是所有的属性都能继承。一般的，大多数框模型属性（包括内边距、外边距、背景和边框）都不能继承。</p>
 <blockquote>
-<p>继承没有特殊性，甚至连0特殊性都没有。</p>
+<p>继承没有特殊性，甚至连 0 特殊性都没有。</p>
 </blockquote>
-<p>关于通配选择器的问题：由于通配选择器适用于所有元素，而且具有0特殊性，但是继承根本没有特殊性，所以会出现短路继承的效果，所以避免不加区别的使用通配选择器。</p>
+<p>关于通配选择器的问题：由于通配选择器适用于所有元素，而且具有 0 特殊性，但是继承根本没有特殊性，所以会出现短路继承的效果，所以避免不加区别的使用通配选择器。</p>
 <h1 id="3-层叠"><a href="#3-层叠" class="headerlink" title="3. 层叠"></a>3. 层叠</h1><p>确定应当向一个元素应用哪些值时，不仅仅要考虑继承，还要考虑声明的特殊性，另外需要考虑声明本身的来源。这个过程称之为层叠。</p>
 <blockquote>
-<p>层叠的规则如下：</p>
-<ol>
-<li>找出所有相关的规则，这些规则包含与一个给定元素匹配的选择器。</li>
-<li>按照显示权重对应用到该元素的所有声明排序。标志! important的规则的权重要高于没有! important标志的规则。<br>按来源对应用到给定元素的所有声明排序。声明权重：读者的重要声明&gt;创作人员的重要声明&gt;创作人员的正常声明&gt;读者的正常声明&gt;用户代理声明。</li>
-<li>按特殊性对应用到给定元素的所有声明排序。有较高特殊性的元素权重要大于有较低特殊性的元素。</li>
-<li>按出现顺序对应用到给定元素的所有声明排序。一个声明在样式表或文档中越靠后先出现，它的权重越大。<br>如果样式表中有导入的样式表，一般认为出现在导入样式表中的声明在前，主样式表中的所有声明在后。</li>
-</ol>
+<p>层叠的规则如下：<br>① 找出所有相关的规则，这些规则包含与一个给定元素匹配的选择器。<br>② 按照显示权重对应用到该元素的所有声明排序。标志 <code>!important</code> 的规则的权重要高于没有 <code>!important</code> 标志的规则。<br>按来源对应用到给定元素的所有声明排序。声明权重：读者的重要声明 &gt; 创作人员的重要声明 &gt; 创作人员的正常声明 &gt; 读者的正常声明 &gt; 用户代理声明。<br>③ 按特殊性对应用到给定元素的所有声明排序。有较高特殊性的元素权重要大于有较低特殊性的元素。<br>④ 按出现顺序对应用到给定元素的所有声明排序。一个声明在样式表或文档中越靠后先出现，它的权重越大。<br>PS:如果样式表中有导入的样式表，一般认为出现在导入样式表中的声明在前，主样式表中的所有声明在后。</p>
 </blockquote>
 
       
@@ -438,8 +424,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/17/CSS之选择器/" rel="next" title="CSS之选择器">
-                <i class="fa fa-chevron-left"></i> CSS之选择器
+              <a href="/2017/07/17/CSS之选择器/" rel="next" title="CSS 之选择器">
+                <i class="fa fa-chevron-left"></i> CSS 之选择器
               </a>
             
           </div>
@@ -448,8 +434,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/12/CSS之三栏式布局/" rel="prev" title="CSS之三栏式布局">
-                CSS之三栏式布局 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/12/CSS之三栏式布局/" rel="prev" title="CSS 之三栏式布局">
+                CSS 之三栏式布局 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
