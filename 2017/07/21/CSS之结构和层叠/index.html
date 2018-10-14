@@ -97,12 +97,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/21/CSS之结构和层叠/index.html">
 <meta property="og:site_name" content="Jacob&#39;s Blog">
 <meta property="og:description" content="1. 特殊性对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明。如果一个元素有两个或多个冲突的的属性声明，那么有最高特殊性的声明就会胜出。">
-<meta property="og:image" content="http://yoursite.com/images/specificity_example.jpg">
-<meta property="og:updated_time" content="2018-10-13T04:44:58.647Z">
+<meta property="og:image" content="http://yoursite.com/images/css_cascade/specificity_example.jpg">
+<meta property="og:updated_time" content="2018-10-14T00:32:48.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 之结构与层叠">
 <meta name="twitter:description" content="1. 特殊性对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明。如果一个元素有两个或多个冲突的的属性声明，那么有最高特殊性的声明就会胜出。">
-<meta name="twitter:image" content="http://yoursite.com/images/specificity_example.jpg">
+<meta name="twitter:image" content="http://yoursite.com/images/css_cascade/specificity_example.jpg">
 
 
 
@@ -372,7 +372,7 @@
 <blockquote>
 <p>一个选择器的具体特殊性如下确定：<br>① 对于选择器中给定的各个 ID 属性值，加 0，1，0，0。<br>② 对于选择器中给定的各个类属性值、属性选择或伪类，加 0，0，1，0。<br>③ 对于选择器中给定的各个元素和伪元素，加 0，0，0，1。<br>④ 结合符合通配选择器对特殊性没有任何贡献。<br>⑤ 通配选择器对一个选择器的特殊性没有贡献，其特殊性为 0，0，0，0。<br>⑥ 内联样式的特殊性为 1，0，0，0。</p>
 </blockquote>
-<p><img src="/images/specificity_example.jpg" alt=""><br>有时某个声明十分重要，超过了其他所有声明，可以在声明结束分号之前插入 <code>!important</code>来进行重要声明（注意 <code>!important</code> 的位置，错误的位置会使声明失效）。如果一个重要声明和一个非重要声明冲突，胜出的总是重要声明。</p>
+<p><img src="/images/css_cascade/specificity_example.jpg" alt=""><br>有时某个声明十分重要，超过了其他所有声明，可以在声明结束分号之前插入 <code>!important</code>来进行重要声明（注意 <code>!important</code> 的位置，错误的位置会使声明失效）。如果一个重要声明和一个非重要声明冲突，胜出的总是重要声明。</p>
 <h1 id="2-继承"><a href="#2-继承" class="headerlink" title="2. 继承"></a>2. 继承</h1><p>继承是一个元素向其后代元素传递属性值所采用的机制。<br>但是并不是所有的属性都能继承。一般的，大多数框模型属性（包括内边距、外边距、背景和边框）都不能继承。</p>
 <blockquote>
 <p>继承没有特殊性，甚至连 0 特殊性都没有。</p>
