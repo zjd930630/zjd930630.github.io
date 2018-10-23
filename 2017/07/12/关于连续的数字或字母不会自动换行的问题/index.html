@@ -102,7 +102,7 @@
 <meta property="og:image" content="http://yoursite.com/images/problem_linefeed/solved_linefeed_1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/problem_linefeed/solved_linefeed_2.jpg">
 <meta property="og:image" content="http://yoursite.com/images/problem_linefeed/solved_linefeed_3.jpg">
-<meta property="og:updated_time" content="2018-10-22T01:43:37.164Z">
+<meta property="og:updated_time" content="2018-10-23T08:36:31.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于连续的数字或字母不会自动换行的问题">
 <meta name="twitter:description" content="1. 问题的出现在学习图片的 align 属性时，发现了一个问题，连续字母、数字或字母与数字混合不会自动换行（即使其容器的宽度已经设定），会出现溢出的现象。">
@@ -375,7 +375,7 @@
         <h1 id="1-问题的出现"><a href="#1-问题的出现" class="headerlink" title="1. 问题的出现"></a>1. 问题的出现</h1><p>在学习图片的 align 属性时，发现了一个问题，连续字母、数字或字母与数字混合不会自动换行（即使其容器的宽度已经设定），会出现溢出的现象。<br><a id="more"></a><br><img src="/images/problem_linefeed/problem_linefeed_1.jpg" alt=""><br><img src="/images/problem_linefeed/problem_linefeed_2.jpg" alt=""></p>
 <h1 id="2-原因"><a href="#2-原因" class="headerlink" title="2. 原因"></a>2. 原因</h1><p>CJK（Chinese / Japanese / Korean）字符是可以在任意字换行的（但有时需要考虑一下标点等禁则）；而英文则不能，默认情况下是要按照半角空格或连字符来换行。</p>
 <h1 id="3-解决方法"><a href="#3-解决方法" class="headerlink" title="3. 解决方法"></a>3. 解决方法</h1><h2 id="3-1-手动断行"><a href="#3-1-手动断行" class="headerlink" title="3.1 手动断行"></a>3.1 手动断行</h2><p>手动进行断行，即在想要断行的地方键入空格。</p>
-<h2 id="3-2-使用-CSS-属性"><a href="#3-2-使用-CSS-属性" class="headerlink" title="3.2 使用 CSS 属性"></a>3.2 使用 CSS 属性</h2><p><strong>1.</strong> <code>word-break</code> 指定了怎样在单词内断行。<br>word-break : normal（使用默认的断行规则） | break-all（对于 non-CJK (中文/日文/韩文) 文本，可在任意字符间断行。） | keep-all（CJK 文本不断行。 Non-CJK 文本表现同 normal。）<br><strong>2.</strong> <code>word-wrap</code> 属性允许长单词或 URL 地址换行到下一行。<br>word-wrap: normal（只在允许的断字点换行，浏览器保持默认处理） | break-word（在长单词或 URL 地址内部进行换行。）<br><strong>3.</strong> 区别：<code>word-break:break-all</code> 会直接将行末端溢出的长英文单词进行截断处理；<code>word-wrap:break-word</code> 会将行末端溢出的长英文单词看做一个整体，如果该行末端空间不足，则另起一行，而不会选择直接将长英文单词进行截断处理。<br><img src="/images/problem_linefeed/solved_linefeed_1.jpg" alt=""><br><img src="/images/problem_linefeed/solved_linefeed_2.jpg" alt=""><br><img src="/images/problem_linefeed/solved_linefeed_3.jpg" alt=""></p>
+<h2 id="3-2-使用-CSS-属性"><a href="#3-2-使用-CSS-属性" class="headerlink" title="3.2 使用 CSS 属性"></a>3.2 使用 CSS 属性</h2><p><strong>(1)</strong> <code>word-break</code> 指定了怎样在单词内断行。<br>word-break : normal（使用默认的断行规则） | break-all（对于 non-CJK (中文/日文/韩文) 文本，可在任意字符间断行。） | keep-all（CJK 文本不断行。 Non-CJK 文本表现同 normal。）<br><strong>(2)</strong> <code>word-wrap</code> 属性允许长单词或 URL 地址换行到下一行。<br>word-wrap: normal（只在允许的断字点换行，浏览器保持默认处理） | break-word（在长单词或 URL 地址内部进行换行。）<br><strong>(3)</strong> 区别：<code>word-break:break-all</code> 会直接将行末端溢出的长英文单词进行截断处理；<code>word-wrap:break-word</code> 会将行末端溢出的长英文单词看做一个整体，如果该行末端空间不足，则另起一行，而不会选择直接将长英文单词进行截断处理。<br><img src="/images/problem_linefeed/solved_linefeed_1.jpg" alt=""><br><img src="/images/problem_linefeed/solved_linefeed_2.jpg" alt=""><br><img src="/images/problem_linefeed/solved_linefeed_3.jpg" alt=""></p>
 
       
     </div>
