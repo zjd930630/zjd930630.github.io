@@ -1,0 +1,791 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="设置文本属性是 CSS 样式表中重要的部分之一，文本的格式对页面的可读性有着非常显著的影响。">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 之文本属性">
+<meta property="og:url" content="http://yoursite.com/2018/10/23/CSS之文本属性/index.html">
+<meta property="og:site_name" content="Jacob&#39;s Blog">
+<meta property="og:description" content="设置文本属性是 CSS 样式表中重要的部分之一，文本的格式对页面的可读性有着非常显著的影响。">
+<meta property="og:image" content="http://yoursite.com/images/css_text/css_text_text-indent.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_text/css_text_text-align.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_text/css_text_line-height.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_text/css_text_vertical-align.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_text/css_text_word-spacing.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_text/css_text_letter-spacing.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_text/css_text_text-transform.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_text/css_text_text-decoration.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_text/css_text_text-shadow.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_text/css_text_word-break.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_text/css_text_word-wrap.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_text/css_text_white-space_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_text/css_text_white-space_2.jpg">
+<meta property="og:updated_time" content="2018-10-25T12:49:22.877Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS 之文本属性">
+<meta name="twitter:description" content="设置文本属性是 CSS 样式表中重要的部分之一，文本的格式对页面的可读性有着非常显著的影响。">
+<meta name="twitter:image" content="http://yoursite.com/images/css_text/css_text_text-indent.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/23/CSS之文本属性/"/>
+
+
+
+
+
+  <title>CSS 之文本属性 | Jacob's Blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jacob's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/23/CSS之文本属性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jacob.D">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jacob's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS 之文本属性
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-23T09:57:24+08:00">
+                2018-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>设置文本属性是 CSS 样式表中重要的部分之一，文本的格式对页面的可读性有着非常显著的影响。<br><a id="more"></a></p>
+<h1 id="1-文本属性"><a href="#1-文本属性" class="headerlink" title="1. 文本属性"></a>1. 文本属性</h1><h2 id="1-1-文本缩进"><a href="#1-1-文本缩进" class="headerlink" title="1.1 文本缩进"></a>1.1 文本缩进</h2><p>CSS 属性 <code>text-indent</code> 能够帮助我们实现文本的缩进。通过使用该属性，所有元素的第一行都可以缩进一个给定的长度，甚至该长度可以是负值。<br><img src="/images/css_text/css_text_text-indent.jpg" alt=""><br><code>text-indent</code> 属性有 3 种值可选：<br>① (length)：使用固定的长度值来指定文本的缩进。允许使用负值。<br>② (percentage)：使用父元素宽度的百分比作为缩进。<br>③ inherit：继承父元素的缩进值。</p>
+<p><code>text-indent</code> 属性使用过程中有以下注意几点：<br>① <code>text-indent</code> 属性可以应用在所有块级元素中，但是无法应用于行内元素，图像之类的替换元素中。如果想为一个行内元素设置缩进，可以使用内边距或外边距来达到这种效果。<br>② 在为 <code>text-indent</code> 设置负值的时候，可能会超出浏览器边界，所以为避免这种情况的出现，最好针对负缩进再设置一个外边距或者内边距。<br>③ 即使插入了换行符，这种缩进也只是应用于一个元素的第一行。</p>
+<h2 id="1-2-水平对齐"><a href="#1-2-水平对齐" class="headerlink" title="1.2 水平对齐"></a>1.2 水平对齐</h2><p>CSS 使用 <code>text-align</code> 来控制一个元素中文本行相互之间的对齐方式。<br><img src="/images/css_text/css_text_text-align.jpg" alt=""><br><code>text-align</code> 属性有 5 个值可选：<br>① left：使元素内容左对齐。<br>② center：使元素内容居中对齐。<br>③ right：使元素内容右对齐。<br>④ justify：使元素内容两端对齐。使文本展开，改变单词之间的差距，使所有文本行的宽度相同。<br>⑤ inherit：继承父元素的对齐方式。</p>
+<p>PS：<code>text-align</code> 属性只应用在块级元素中，且不会控制元素对齐，而只影响其内部内容。若想将块级元素或表元素居中，要通过在这些元素上适当地设置左、右外边距来实现。</p>
+<h2 id="1-3-垂直对齐"><a href="#1-3-垂直对齐" class="headerlink" title="1.3 垂直对齐"></a>1.3 垂直对齐</h2><p>CSS 使用 <code>vertical-align</code> 来对控制元素的垂直对齐方式，但是它的取值有时与 <code>line-height</code> 息息相关，所以我们同时介绍这两种属性。</p>
+<h3 id="1-3-1-line-height"><a href="#1-3-1-line-height" class="headerlink" title="1.3.1 line-height"></a>1.3.1 line-height</h3><p><code>line-height</code> 属性即为行高，指文本基线「字符排列的基准线」之间的距离，而不是字体的大小，它决定了将各个元素框的高度增加或者减少多少。<br><img src="/images/css_text/css_text_line-height.jpg" alt=""><br>在该属性应用到块级元素时，它定义了元素中文本基线之间的最小距离。<code>line-height</code> 控制着行间距，它和字体大小的差就是行间距。<br><code>line-height</code> 属性有 5 种值可选：<br>① (length)：使用固定的长度值来指定文本的行高。不允许使用负值。<br>② (percentage)：相对于元素的 <code>font-size</code> 值计算。<br>③ (number):即缩放因子。指定缩放因子时，元素会根据自己的 <code>font-size</code> 值进行行高的计算。<br>④ normal：即默认值，用户代理会给定一个合适的行高。<br>⑤ inherit：继承父元素行高的计算值。</p>
+<h3 id="1-3-2-vertival-align"><a href="#1-3-2-vertival-align" class="headerlink" title="1.3.2 vertival-align"></a>1.3.2 vertival-align</h3><p><code>vertical-align</code> 属性只能应用于行内元素或者替换元素，且不影响块级元素中内容的对齐。<br><img src="/images/css_text/css_text_vertical-align.jpg" alt=""><br><code>vertical-align</code> 属性有 11 种值可选：<br>① baseline：即基线对齐。要求元素的基线与父元素的基线对齐，也是默认属性。<br>② sub、super：即上下标。要求元素的基线（若为替换元素则为其底端）相对于父元素的基线降低或上升。<br>③ bottom、text-bottom：即底端对齐。bottom 指元素行内框底端与行框底端对齐。text-bottom 指与行内文本对齐，替换元素或其他类型的非文本元素会忽略这个值，其行内框底端会与以父元素 <code>font-size</code> 值得到的一个文本框底端进行对齐。<br>④ top、text-top：即顶端对齐。与底端对齐相反。<br>⑤ middle：即居中对齐。要求行内元素框的中点与父元素基线上方 0.5ex处的一个点对齐，这里的 1ex 相对于父元素的 <code>font-size</code> 定义。<br>⑥ (percentage)：该百分数为元素 <code>line-height</code> 值的百分数，而不是相对于其父元素的 <code>line-height</code> 值。<br>⑦ (length)：使用固定的长度值来垂直对齐。<br>⑧ inherit：继承父元素的垂直对齐的值。</p>
+<p>PS：垂直对齐的文本并不会成为另一行的一部分，也不会覆盖其他行中的文本。</p>
+<h2 id="1-4-字间隔"><a href="#1-4-字间隔" class="headerlink" title="1.4 字间隔"></a>1.4 字间隔</h2><p>CSS 使用 <code>word-spacing</code> 来控制字之间的间隔。<br><img src="/images/css_text/css_text_word-spacing.jpg" alt=""><br><code>word-spacing</code> 属性有 3 种值可选：<br>① (length)：使用固定的长度值来增加或缩短字之间的间隔。允许使用负值。<br>② normal：即默认值，由当前字体和或浏览器定义。<br>③ inherit：继承父元素的字间隔值。</p>
+<p>PS：<code>word-spacing</code> 的值可能会受 <code>text-align</code> 的属性值影响。如果一个元素是两端对齐的，字母和字之间的空间可能会调整，以便文本在整行中刚好能放下。</p>
+<h2 id="1-5-字母间隔"><a href="#1-5-字母间隔" class="headerlink" title="1.5 字母间隔"></a>1.5 字母间隔</h2><p>CSS 使用 <code>letter-spacing</code> 来控制字符或字母之间的间隔，通常用于突出强调。<br><img src="/images/css_text/css_text_letter-spacing.jpg" alt=""><br><code>letter-spacing</code> 属性有 3 种值可选：<br>① (length)：使用固定的长度值来增加或缩短字符或字母之间的间隔。允许使用负值。<br>② normal：即默认值，表示间隔为 0。<br>③ inherit：继承父元素的字符或字母的间隔值。</p>
+<p>PS：<code>letter-spacing</code> 的值不会受 <code>text-align</code> 的属性值影响。但如果 <code>letter-spacing</code> 的值为 normal，字符间的间隔就可能会改变。</p>
+<h2 id="1-6-文本转换"><a href="#1-6-文本转换" class="headerlink" title="1.6 文本转换"></a>1.6 文本转换</h2><p>CSS 使用 <code>text-transform</code> 来处理文本的大小写。<br><img src="/images/css_text/css_text_text-transform.jpg" alt=""><br><code>text-transform</code> 属性有 5 种值可选：<br>① uppercase：将文本转化为全大写的字符。<br>② lowercase：将文本转化为全小写的字符。<br>③ capitalize:只对每个单词的首字母大写。<br>④ none：即默认值，不作任何改动。<br>⑤ inherit：继承父元素的值。</p>
+<h2 id="1-7-文本装饰"><a href="#1-7-文本装饰" class="headerlink" title="1.7 文本装饰"></a>1.7 文本装饰</h2><p>CSS 使用 <code>text-decoration</code> 来对文本进行一些装饰。<br><img src="/images/css_text/css_text_text-decoration.jpg" alt=""><br><code>text-decoration</code> 属性有 3 种值可选：<br>① none：默认值，即关闭元素上的所有装饰。<br>② underline 指底端加一条下划线；overline 指顶端加一个上划线；line-through 指加一条贯穿文本的线；blink 指让文本闪烁（通常不可取）。<br>③ inherit：继承父元素的文本装饰。</p>
+<p>PS：一个元素中可以同时有多种装饰，用空格进行分隔；当有规则冲突时，会进行替换而不是叠加；没有办法去除父元素生成的文本装饰，只能为其添加自己的装饰以覆盖父元素的文本装饰。</p>
+<h2 id="1-8-文本阴影"><a href="#1-8-文本阴影" class="headerlink" title="1.8 文本阴影"></a>1.8 文本阴影</h2><p>CSS 使用 <code>text-shadow</code> 来为文本添加阴影。<br><img src="/images/css_text/css_text_text-shadow.jpg" alt=""><br><code>text-shadow</code> 属性有 3 种值可选：<br>① none：默认值，即不是用文本阴影。<br>② color length length length：分别代表阴影颜色、阴影水平偏移距离、阴影垂直偏移距离、阴影模糊半径。可以定义多组阴影，用逗号分隔即可。<br>③ inherit：继承父元素的文本阴影。</p>
+<p>PS：水平偏移向右为正，垂直偏移向下为正；模糊半径值越大，阴影也就越大越淡；颜色先后指定都可以。</p>
+<h2 id="1-9-文本换行"><a href="#1-9-文本换行" class="headerlink" title="1.9 文本换行"></a>1.9 文本换行</h2><p>CSS 提供了两种属性来对文本进行断行处理。对于西方文字，浏览器会在半角空格或者连字符的地方进行换行；对于中文，可以在任何一个中文字后面进行换行。</p>
+<h3 id="1-9-1-word-break"><a href="#1-9-1-word-break" class="headerlink" title="1.9.1 word-break"></a>1.9.1 word-break</h3><p>CSS 使用 <code>word-break</code> 来让文字自动换行。<br><img src="/images/css_text/css_text_word-break.jpg" alt=""><br><code>word-break</code> 属性有 4 种值可选：<br>① normal：使用浏览器默认的换行规则。<br>② keep-all：CJK（CJK 指中文 / 日文 / 韩文）文本不断行。 Non-CJK 文本表现同 normal。<br>③ break-all：可在任意处断行。<br>③ inherit：继承父元素的文本换行方式。</p>
+<h3 id="1-9-1-word-wrap"><a href="#1-9-1-word-wrap" class="headerlink" title="1.9.1 word-wrap"></a>1.9.1 word-wrap</h3><p>CSS 使用 <code>word-wrap</code> 来让长单词或者字符串自动换行。<br><img src="/images/css_text/css_text_word-wrap.jpg" alt=""><br><code>word-wrap</code> 属性有 3 种值可选：<br>① normal：使用浏览器默认的换行规则。<br>② break-word：表示如果行内没有多余的地方容纳该单词到结尾，则那些正常的不能被分割的单词会被强制分割换行。<br>③ inherit：继承父元素的文本换行方式。</p>
+<h2 id="1-10-空白符的处理"><a href="#1-10-空白符的处理" class="headerlink" title="1.10 空白符的处理"></a>1.10 空白符的处理</h2><p>CSS 使用 <code>white-space</code> 来处理文档中的空格、换行和 tab 字符的处理。<br><img src="/images/css_text/css_text_white-space_1.jpg" alt=""><br><code>white-space</code> 属性有 6 种值可选：<br>① normal：连续的空白符会被合并，换行符会被当作空白符来处理。。<br>② nowrap：连续的空白符会被合并，但文本内的换行无效，除非使用了 <code>br</code> 元素。<br>③ pre:连续的空白符甚至回车都会被保留。<br>④ pre-wrap：连续的空白符会被保留，但文本会进行正常的换行。<br>⑤ pre-line：连续的空白符会被合并，但会保留换行符。<br>⑥ inherit：继承父元素处理空白符的方式。</p>
+<p><code>white-space</code> 属性的行为总结如下：<br><img src="/images/css_text/css_text_white-space_2.jpg" alt="">  </p>
+<h1 id="2-参考文档"><a href="#2-参考文档" class="headerlink" title="2. 参考文档"></a>2. 参考文档</h1><p><a href="">[1] CSS 权威指南</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/%E4%B8%BA%E6%96%87%E6%9C%AC%E6%B7%BB%E5%8A%A0%E6%A0%B7%E5%BC%8F/Fundamentals" target="_blank" rel="external">[2] 基本文本和字体样式</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/18/CSS之字体/" rel="next" title="CSS 之字体">
+                <i class="fa fa-chevron-left"></i> CSS 之字体
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Jacob.D" />
+          <p class="site-author-name" itemprop="name">Jacob.D</p>
+           
+              <p class="site-description motion-element" itemprop="description">Stay Hungry , Stay Foolish .</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zjd930630" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/zjd930630" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-文本属性"><span class="nav-text">1. 文本属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-文本缩进"><span class="nav-text">1.1 文本缩进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-水平对齐"><span class="nav-text">1.2 水平对齐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-垂直对齐"><span class="nav-text">1.3 垂直对齐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-line-height"><span class="nav-text">1.3.1 line-height</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-vertival-align"><span class="nav-text">1.3.2 vertival-align</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-字间隔"><span class="nav-text">1.4 字间隔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-字母间隔"><span class="nav-text">1.5 字母间隔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-文本转换"><span class="nav-text">1.6 文本转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-文本装饰"><span class="nav-text">1.7 文本装饰</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-8-文本阴影"><span class="nav-text">1.8 文本阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-9-文本换行"><span class="nav-text">1.9 文本换行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9-1-word-break"><span class="nav-text">1.9.1 word-break</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9-1-word-wrap"><span class="nav-text">1.9.1 word-wrap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-10-空白符的处理"><span class="nav-text">1.10 空白符的处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-参考文档"><span class="nav-text">2. 参考文档</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jacob.D</span>
+</div>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    PV: &nbsp<span id="busuanzi_value_site_pv"></span> &nbspTimes
+</span>
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
