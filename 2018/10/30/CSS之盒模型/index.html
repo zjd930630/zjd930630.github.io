@@ -1,0 +1,803 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="盒模型是CSS中的一个重要概念，它是元素大小的呈现方式。Every Element In Web Design Is A Rectangular Box.">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 之盒模型">
+<meta property="og:url" content="http://yoursite.com/2018/10/30/CSS之盒模型/index.html">
+<meta property="og:site_name" content="Jacob&#39;s Blog">
+<meta property="og:description" content="盒模型是CSS中的一个重要概念，它是元素大小的呈现方式。Every Element In Web Design Is A Rectangular Box.">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_display.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_box-model.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_width.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_height.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_margin_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_margin_2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_border-width_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_border-width_2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_border-style_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_border-style_2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_border-color_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_border-color_2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_border_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_border_2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_padding_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_padding_2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_visibility.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_box-shadow.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_overflow_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_overflow_2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/css_box/css_box_box-sizing.jpg">
+<meta property="og:updated_time" content="2018-10-31T08:24:11.514Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS 之盒模型">
+<meta name="twitter:description" content="盒模型是CSS中的一个重要概念，它是元素大小的呈现方式。Every Element In Web Design Is A Rectangular Box.">
+<meta name="twitter:image" content="http://yoursite.com/images/css_box/css_box_display.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/30/CSS之盒模型/"/>
+
+
+
+
+
+  <title>CSS 之盒模型 | Jacob's Blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jacob's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/30/CSS之盒模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jacob.D">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jacob's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS 之盒模型
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-30T12:24:12+08:00">
+                2018-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>盒模型是CSS中的一个重要概念，它是元素大小的呈现方式。Every Element In Web Design Is A Rectangular Box.<br><a id="more"></a></p>
+<h1 id="1-一些基本概念"><a href="#1-一些基本概念" class="headerlink" title="1. 一些基本概念"></a>1. 一些基本概念</h1><p>在学习盒模型之前，需要了解一些有关盒子的基本概念，有助于帮我们更好地理解盒模型的内容。<br>① 非替换元素：如果元素的内容包含在文档中，则称之为非替换元素。<br>② 替换元素：指用作为其他内容占位符的一个元素，最典型的例子就是 img 元素。<br>③ 块级元素：这类元素在正常流中时，会在其框之前和之后生成「换行」，所以处以正常流中的块级元素会垂直摆放。<br>④ 行内元素：这类元素不会之前和之后生成「行分隔符」，他们是块级元素的后代。行内元素可以继承块元素，反之则不允许。</p>
+<h1 id="2-盒类型"><a href="#2-盒类型" class="headerlink" title="2. 盒类型"></a>2. 盒类型</h1><p>CSS 可以使用属性 display 来影响元素的显示方式。<br><img src="/images/css_box/css_box_display.jpg" alt=""><br>下面主要介绍几种常用的元素显示方式：<br>① inline：元素作为行内元素显示。<br>② block：元素作为块状元素显示。<br>③ inline-block：元素为块状元素和行内元素的混合。他会作为替换元素放置于行中；在行内块元素内部，会像块级元素一样设置内容的格式。<br>④ run-in：使某些块级元素作为下一个元素的行内部分。只有当 run-in 框后面是一个块级框时 run-in 才会起作用。<br>⑤ list-item：将元素作为列表来显示，并可以为其添加列表样式。<br>⑥ none：即关闭一个元素的显示。当你使用 none 时，其所有后代元素的显示也会被关闭。</p>
+<h1 id="3-盒模型"><a href="#3-盒模型" class="headerlink" title="3. 盒模型"></a>3. 盒模型</h1><p>一个完整的盒模型由外而内包括：边距（margin）、边框（border）、填充（padding）、内容（content）。<br><img src="/images/css_box/css_box_box-model.jpg" alt=""></p>
+<h2 id="3-1-元素的宽度和高度"><a href="#3-1-元素的宽度和高度" class="headerlink" title="3.1 元素的宽度和高度"></a>3.1 元素的宽度和高度</h2><h3 id="3-1-1-width"><a href="#3-1-1-width" class="headerlink" title="3.1.1 width"></a>3.1.1 width</h3><p>width 定义了内容区的宽度。正常流中块级元素的水平部分总和就等于父元素的 width。<br><img src="/images/css_box/css_box_width.jpg" alt=""><br>水平格式化的 7 大属性为：<code>margin-left</code>、<code>border-left</code>、<code>padding-left</code>、<code>width</code>、<code>margin-right</code>、<code>border-right</code> 和 <code>padding-right</code>。这 7 个属性中，只有 3 个属性可以设置为 auto：元素内容的 width，以及左、右外边距。<br>下面列举了水平属性使用 auto 的几种情况：<br>① 如果设置 <code>width</code>、<code>margin-left</code>、<code>margin-right</code> 中的某个值为 auto，而余下两个属性指定为特定的值，那么设置为 auto 的属性会确定所需的长度，从而使元素框的宽度等于父元素的 width。<br>② 如果这 3 个值都设置为非 auto 的某个值，CSS 称之为「过分受限」，此时总会将 <code>margin-right</code> 的值强制为 auto。<br>③ 如果两个外边距都显式地设置，而 width 设置为 auto，width 值将设置为所需的某个值，从而达到需要的总宽度（即父元素的内容宽度）。<br>④ 如果两个外边距都设置为 auto，他们会设置为相等的长度，从而使元素在其父元素中居中。<br>⑤ 若将某个外边距以及 width 值设置为 auto，设置为 auto 的外边距会减为 0。<br>⑥ 若 3 个元素都设置为 auto，两个外边距都会设置成 0，而 width 会尽可能地宽。<br>⑦ 若替换元素的 width 值为 auto，元素的宽度则是内容的固有宽度。</p>
+<h3 id="3-1-2-height"><a href="#3-1-2-height" class="headerlink" title="3.1.2 height"></a>3.1.2 height</h3><p>height 定义了内容区的高度。正常流中块级元素的垂直部分总和就等于父元素的 height。<br><img src="/images/css_box/css_box_height.jpg" alt=""><br>垂直格式化也有 7 大属性，分别为：<code>margin-top</code>、<code>border-top</code>、<code>padding-top</code>、<code>height</code>、<code>margin-bottom</code>、<code>border-bottom</code> 和 <code>padding-bottom</code>。这 7 个属性中，也只有 3 个属性可以设置为 auto：元素内容的 height，以及上、下外边距。<br>下面列举了垂直属性使用 auto 的几种情况：<br>① 如果正常流中一个元素的 <code>margin-top</code> 或 <code>margin-bottom</code> 设置为 auto，他会自动计算为 0。<br>② 如果块级正常流元素的 height 设置为 auto，显示时其高度将恰好足以包含其内联内容（包括文本）的行盒。</p>
+<p>垂直格式化的另一个重要方面是垂直相邻外边距的合并。<br>① 一般地，两个外边距中较小的一个会被较大的一个合并。<br>② 当在包含快上设置边框或者内边距时，会使其子元素的外边距包含在包含快内。<br>③ 如果垂直外边距都设置为负值，浏览器会取两个外边距绝对值的最大值。<br>④ 如果一个正外边距和一个负外边距合并，会从正边距减去这个负边距的绝对值，即负值增加到正值中。</p>
+<p>PS：元素的宽度、高度不能应用到行内非替换元素。</p>
+<h2 id="3-2-外边距"><a href="#3-2-外边距" class="headerlink" title="3.2 外边距"></a>3.2 外边距</h2><p>设置外边距会在元素外创建额外的「空白」，该「空白」通常指不能放其他元素的区域。<br><img src="/images/css_box/css_box_margin_1.jpg" alt=""><br>margin 的取值顺序很重要，应当遵循以下方式：</p>
+<blockquote>
+<p>margin:&nbsp; top &nbsp; right &nbsp; bottom &nbsp; left</p>
+</blockquote>
+<p>另外，margin 取值的时候可以混和使用各种类型的长度值，甚至可以混合使用百分数值和长度值。</p>
+<p>CSS 针对值重复的情况允许为外边距指定少于 4 个值。<br>① 如果缺少左外边距的值，则使用右外边距的值。<br>② 如果缺少下外边距的值，则使用上外边距的值。<br>③ 如果缺少右外边距的值，则使用上外边距的值。</p>
+<p>当你只想设置单边外边距的值，而不想影响其他外边距时，CSS 也提供了单边的外边距属性。<br><img src="/images/css_box/css_box_margin_2.jpg" alt=""><br>margin 值可以为负数，但是可能会导致元素超出其父元素，或者与其他元素重叠，所以需要合理使用负外边距的值。<br>PS：在向一个行内非替换元素应用外边距时，它对行高没有任何影响，但是左右外边距的设置是有效的。</p>
+<h2 id="3-3-边框"><a href="#3-3-边框" class="headerlink" title="3.3 边框"></a>3.3 边框</h2><p>元素的边框就是围绕元素内容和内边距的一条或多条线。一般地，元素的背景会在外边框边界处停止。<br>每个边框都有 3 个方面：其宽度或粗细、其样式和外观、以及其颜色。</p>
+<h3 id="3-3-1-边框宽度"><a href="#3-3-1-边框宽度" class="headerlink" title="3.3.1 边框宽度"></a>3.3.1 边框宽度</h3><p>边框宽度控制着边框的粗细，其默认值为 medium。<br><img src="/images/css_box/css_box_border-width_1.jpg" alt=""><br>我们也可以单独为某条边框设置边框宽度。<br><img src="/images/css_box/css_box_border-width_2.jpg" alt=""></p>
+<h3 id="3-3-3-边框样式"><a href="#3-3-3-边框样式" class="headerlink" title="3.3.3 边框样式"></a>3.3.3 边框样式</h3><p>边框样式控制着边框的显示方式，其默认值为 none，即没有样式，因此也不显示边框。<br><code>border-style</code> 的值可以采用 top - right - bottom - left 的顺序，也可以使用值复制的方式表示。<br><img src="/images/css_box/css_box_border-style_1.jpg" alt=""><br>同样地，如果你只想设置单边边框的样式的值，而不想影响其他边边框样式，可以为元素设置单边的边框样式属性。<br><img src="/images/css_box/css_box_border-style_2.jpg" alt=""></p>
+<h3 id="3-3-3-边框颜色"><a href="#3-3-3-边框颜色" class="headerlink" title="3.3.3 边框颜色"></a>3.3.3 边框颜色</h3><p>默认的边框颜色是元素本身的前景色。<br><img src="/images/css_box/css_box_border-color_1.jpg" alt=""><br>同样地，CSS 为单边的边框颜色提供了一些属性，从而不影响其他边上的颜色设置。<br><img src="/images/css_box/css_box_border-color_2.jpg" alt=""></p>
+<h3 id="3-3-4-边框简写"><a href="#3-3-4-边框简写" class="headerlink" title="3.3.4 边框简写"></a>3.3.4 边框简写</h3><p>CSS 为边框创造了简写的单边边框属性，为单边边框属性的设置提供了方便。需要注意的是，单边边框的属性设置只能应用到一条特定的边，故每种值只能有一种。<br><img src="/images/css_box/css_box_border_1.jpg" alt=""><br>同样地，CSS 为全局的边框属性提供了简写。<br><img src="/images/css_box/css_box_border_2.jpg" alt=""></p>
+<h2 id="3-4-内边距"><a href="#3-4-内边距" class="headerlink" title="3.4 内边距"></a>3.4 内边距</h2><p>元素框的内边距在边框和内容区之间。默认地，元素没有内边距。<br><img src="/images/css_box/css_box_padding_1.jpg" alt=""><br>同样地，CSS 为单边的边框内边距提供了一些属性，从而不影响其他边上的内边距。<br><img src="/images/css_box/css_box_padding_2.jpg" alt=""></p>
+<h1 id="4-盒相关属性"><a href="#4-盒相关属性" class="headerlink" title="4. 盒相关属性"></a>4. 盒相关属性</h1><h2 id="4-1-盒子的隐藏"><a href="#4-1-盒子的隐藏" class="headerlink" title="4.1 盒子的隐藏"></a>4.1 盒子的隐藏</h2><p>CSS 属性 <code>visibility</code> 允许从用户的视线中隐藏盒子。<br><img src="/images/css_box/css_box_visibility.jpg" alt=""><br>当使用 hidden 的属性值时会隐藏元素，但是其他元素的布局不改变，相当于此元素变成透明。若不希望显示空白，可以使用 display 属性并设置成 none。</p>
+<h2 id="4-2-盒子的阴影"><a href="#4-2-盒子的阴影" class="headerlink" title="4.2 盒子的阴影"></a>4.2 盒子的阴影</h2><p>CSS 属性 <code>box-shadow</code> 可以为盒子周围添加阴影。<br><img src="/images/css_box/css_box_box-shadow.jpg" alt=""><br>同 <code>text-shadow</code> 一样，<code>box-shadow</code> 在使用时有 4 个值，分别为阴影水平偏移距离、阴影竖直偏移距离、阴影的模糊半径以及阴影的颜色。当有多个阴影时用逗号进行分隔即可。</p>
+<p>除此之外，还可以通过添加一个可选的关键字 inset 来在盒子内部添加阴影。该阴影只添加于盒子内部，超出盒子边框的部分将被裁剪。</p>
+<h2 id="4-3-盒子内容的溢出"><a href="#4-3-盒子内容的溢出" class="headerlink" title="4.3 盒子内容的溢出"></a>4.3 盒子内容的溢出</h2><p>CSS 属性 <code>overflow</code> 来指定如何显示盒子中容纳不下的内容。<br><img src="/images/css_box/css_box_overflow_1.jpg" alt=""><br>① 使用 hidden 属性值时，内容将被剪裁以适合填充框。 不提供滚动条。<br>② 使用 scroll 属性值时，内容将被滚动显示，并提供滚动条。<br>③ 当使用两个属性值时，第一个关键字将应用于 <code>overflow-y</code>，第二个关键字应用于<code>overflow-x</code>。</p>
+<p>我们也可以单独指定水平或者垂直方向上如果内容超出盒容纳范围时的显示方法。<br><img src="/images/css_box/css_box_overflow_2.jpg" alt=""> </p>
+<h2 id="4-4-盒子的宽高计算方式"><a href="#4-4-盒子的宽高计算方式" class="headerlink" title="4.4 盒子的宽高计算方式"></a>4.4 盒子的宽高计算方式</h2><p>CSS 属性 <code>box-sizing</code> 用于更改用于计算元素宽度和高度的默认的 CSS 盒子模型。<br><img src="/images/css_box/css_box_box-sizing.jpg" alt=""><br>① 当使用 <code>content-box</code> 属性值时，元素的宽度和高度不包括内部的补白区域以及边框的宽度，该值为默认值。<br>② 当使用 <code>border-box</code> 属性值时，元素的宽度和高度包括内部的补白区域以及边框的宽度。</p>
+<h1 id="5-参考文档"><a href="#5-参考文档" class="headerlink" title="5. 参考文档"></a>5. 参考文档</h1><p><a href="">[1] CSS 权威指南</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model" target="_blank" rel="external">[2] MDN 文档：盒子模型</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/23/CSS之文本属性/" rel="next" title="CSS 之文本属性">
+                <i class="fa fa-chevron-left"></i> CSS 之文本属性
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Jacob.D" />
+          <p class="site-author-name" itemprop="name">Jacob.D</p>
+           
+              <p class="site-description motion-element" itemprop="description">Stay Hungry , Stay Foolish .</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zjd930630" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/zjd930630" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-一些基本概念"><span class="nav-text">1. 一些基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-盒类型"><span class="nav-text">2. 盒类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-盒模型"><span class="nav-text">3. 盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-元素的宽度和高度"><span class="nav-text">3.1 元素的宽度和高度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-width"><span class="nav-text">3.1.1 width</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-height"><span class="nav-text">3.1.2 height</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-外边距"><span class="nav-text">3.2 外边距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-边框"><span class="nav-text">3.3 边框</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1-边框宽度"><span class="nav-text">3.3.1 边框宽度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-3-边框样式"><span class="nav-text">3.3.3 边框样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-3-边框颜色"><span class="nav-text">3.3.3 边框颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-4-边框简写"><span class="nav-text">3.3.4 边框简写</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-内边距"><span class="nav-text">3.4 内边距</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-盒相关属性"><span class="nav-text">4. 盒相关属性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-盒子的隐藏"><span class="nav-text">4.1 盒子的隐藏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-盒子的阴影"><span class="nav-text">4.2 盒子的阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-盒子内容的溢出"><span class="nav-text">4.3 盒子内容的溢出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-盒子的宽高计算方式"><span class="nav-text">4.4 盒子的宽高计算方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-参考文档"><span class="nav-text">5. 参考文档</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jacob.D</span>
+</div>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    PV: &nbsp<span id="busuanzi_value_site_pv"></span> &nbspTimes
+</span>
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
