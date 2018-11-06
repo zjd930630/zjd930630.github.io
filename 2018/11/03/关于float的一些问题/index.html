@@ -90,19 +90,22 @@
 
 
 
-<meta name="description" content="1. 特殊性对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明。如果一个元素有两个或多个冲突的的属性声明，那么有最高特殊性的声明就会胜出。">
+<meta name="description" content="1. 问题的出现在学习布局有关的 float 属性时，发现了 float 属性在使用时出现的 2 个问题。问题如下：Q1： 如果一个元素中只包含了浮动元素，且未为该元素设置高度，其浮动元素并不会把该元素的高度撑开，会默认它的高度为 0。Q2: float 属性会使元素脱离正常文档流，但是元素的文本内容还是会占用该位置。可以看见示例中为第一个元素设置浮动并取消颜色之后，其他元素当它不存在一样按照正常">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS 之结构与层叠">
-<meta property="og:url" content="http://yoursite.com/2017/07/21/CSS之结构和层叠/index.html">
+<meta property="og:title" content="关于 float 的一些问题">
+<meta property="og:url" content="http://yoursite.com/2018/11/03/关于float的一些问题/index.html">
 <meta property="og:site_name" content="Jacob&#39;s Blog">
-<meta property="og:description" content="1. 特殊性对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明。如果一个元素有两个或多个冲突的的属性声明，那么有最高特殊性的声明就会胜出。">
-<meta property="og:image" content="http://yoursite.com/images/css_cascade/specificity_example.jpg">
-<meta property="og:updated_time" content="2018-10-14T00:32:48.276Z">
+<meta property="og:description" content="1. 问题的出现在学习布局有关的 float 属性时，发现了 float 属性在使用时出现的 2 个问题。问题如下：Q1： 如果一个元素中只包含了浮动元素，且未为该元素设置高度，其浮动元素并不会把该元素的高度撑开，会默认它的高度为 0。Q2: float 属性会使元素脱离正常文档流，但是元素的文本内容还是会占用该位置。可以看见示例中为第一个元素设置浮动并取消颜色之后，其他元素当它不存在一样按照正常">
+<meta property="og:image" content="http://yoursite.com/images/problem_float/problem_float_Q1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/problem_float/problem_float_Q2.jpg">
+<meta property="og:image" content="http://yoursite.com/images/problem_float/solved_float_Q1_1.jpg">
+<meta property="og:image" content="http://yoursite.com/images/problem_float/solved_float_Q1_2.jpg">
+<meta property="og:updated_time" content="2018-11-06T12:36:56.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS 之结构与层叠">
-<meta name="twitter:description" content="1. 特殊性对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明。如果一个元素有两个或多个冲突的的属性声明，那么有最高特殊性的声明就会胜出。">
-<meta name="twitter:image" content="http://yoursite.com/images/css_cascade/specificity_example.jpg">
+<meta name="twitter:title" content="关于 float 的一些问题">
+<meta name="twitter:description" content="1. 问题的出现在学习布局有关的 float 属性时，发现了 float 属性在使用时出现的 2 个问题。问题如下：Q1： 如果一个元素中只包含了浮动元素，且未为该元素设置高度，其浮动元素并不会把该元素的高度撑开，会默认它的高度为 0。Q2: float 属性会使元素脱离正常文档流，但是元素的文本内容还是会占用该位置。可以看见示例中为第一个元素设置浮动并取消颜色之后，其他元素当它不存在一样按照正常">
+<meta name="twitter:image" content="http://yoursite.com/images/problem_float/problem_float_Q1.jpg">
 
 
 
@@ -130,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/21/CSS之结构和层叠/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/03/关于float的一些问题/"/>
 
 
 
 
 
-  <title>CSS 之结构与层叠 | Jacob's Blog</title>
+  <title>关于 float 的一些问题 | Jacob's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -275,7 +278,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/21/CSS之结构和层叠/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/关于float的一些问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jacob.D">
@@ -296,7 +299,7 @@
             
             
               
-                CSS 之结构与层叠
+                关于 float 的一些问题
               
             
           </h1>
@@ -311,8 +314,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-21T10:22:37+08:00">
-                2017-07-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-03T16:18:00+08:00">
+                2018-11-03
               </time>
             
 
@@ -334,8 +337,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
+                  <a href="/categories/问题解决/" itemprop="url" rel="index">
+                    <span itemprop="name">问题解决</span>
                   </a>
                 </span>
 
@@ -368,18 +371,10 @@
       
 
       
-        <h1 id="1-特殊性"><a href="#1-特殊性" class="headerlink" title="1. 特殊性"></a>1. 特殊性</h1><p>对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明。如果一个元素有两个或多个冲突的的属性声明，那么有最高特殊性的声明就会胜出。<br><a id="more"></a><br>选择器的特殊性由选择器本身的组件确定。特殊性表述为四个部分， 数字化为 0，0，0，0。</p>
-<blockquote>
-<p>一个选择器的具体特殊性如下确定：<br>① 对于选择器中给定的各个 ID 属性值，加 0，1，0，0。<br>② 对于选择器中给定的各个类属性值、属性选择或伪类，加 0，0，1，0。<br>③ 对于选择器中给定的各个元素和伪元素，加 0，0，0，1。<br>④ 结合符合通配选择器对特殊性没有任何贡献。<br>⑤ 通配选择器对一个选择器的特殊性没有贡献，其特殊性为 0，0，0，0。<br>⑥ 内联样式的特殊性为 1，0，0，0。</p>
-</blockquote>
-<p><img src="/images/css_cascade/specificity_example.jpg" alt=""><br>有时某个声明十分重要，超过了其他所有声明，可以在声明结束分号之前插入 <code>!important</code>来进行重要声明（注意 <code>!important</code> 的位置，错误的位置会使声明失效）。如果一个重要声明和一个非重要声明冲突，胜出的总是重要声明。</p>
-<h1 id="2-继承"><a href="#2-继承" class="headerlink" title="2. 继承"></a>2. 继承</h1><p>继承是一个元素向其后代元素传递属性值所采用的机制。<br>但是并不是所有的属性都能继承。一般的，大多数框模型属性（包括内边距、外边距、背景和边框）都不能继承。</p>
-<blockquote>
-<p>继承没有特殊性，甚至连 0 特殊性都没有。</p>
-</blockquote>
-<p>关于通配选择器的问题：由于通配选择器适用于所有元素，而且具有 0 特殊性，但是继承根本没有特殊性，所以会出现短路继承的效果，所以避免不加区别地使用通配选择器。</p>
-<h1 id="3-层叠"><a href="#3-层叠" class="headerlink" title="3. 层叠"></a>3. 层叠</h1><p>确定应当向一个元素应用哪些值时，不仅仅要考虑继承，还要考虑声明的特殊性，另外需要考虑声明本身的来源。这个过程称之为层叠。</p>
-<p>层叠的规则如下：<br>① 找出所有相关的规则，这些规则包含与一个给定元素匹配的选择器。<br>② 按照显示权重对应用到该元素的所有声明排序。标志 <code>!important</code> 的规则的权重要高于没有 <code>!important</code> 标志的规则。<br>按来源对应用到给定元素的所有声明排序。声明权重：读者的重要声明 &gt; 创作人员的重要声明 &gt; 创作人员的正常声明 &gt; 读者的正常声明 &gt; 用户代理声明。<br>③ 按特殊性对应用到给定元素的所有声明排序。有较高特殊性的元素权重要大于有较低特殊性的元素。<br>④ 按出现顺序对应用到给定元素的所有声明排序。一个声明在样式表或文档中越靠后先出现，它的权重越大。<br>PS:如果样式表中有导入的样式表，一般认为出现在导入样式表中的声明在前，主样式表中的所有声明在后。</p>
+        <h1 id="1-问题的出现"><a href="#1-问题的出现" class="headerlink" title="1. 问题的出现"></a>1. 问题的出现</h1><p>在学习布局有关的 float 属性时，发现了 float 属性在使用时出现的 2 个问题。问题如下：<br>Q1： 如果一个元素中只包含了浮动元素，且未为该元素设置高度，其浮动元素并不会把该元素的高度撑开，会默认它的高度为 0。<br><img src="/images/problem_float/problem_float_Q1.jpg" alt=""><br>Q2: float 属性会使元素脱离正常文档流，但是元素的文本内容还是会占用该位置。<br><img src="/images/problem_float/problem_float_Q2.jpg" alt=""><br>可以看见示例中为第一个元素设置浮动并取消颜色之后，其他元素当它不存在一样按照正常文本流的方式进行布局，但是第一个元素的内容将第二个元素的内容挤了下去，导致第二元素与第三元素的内容相互重叠。<br><a id="more"></a></p>
+<h1 id="2-原因"><a href="#2-原因" class="headerlink" title="2. 原因"></a>2. 原因</h1><p><strong>Reason for Q1</strong> —— float 属性会使元素脱离正常文档流，并不会占据文档流的位置。如果一个元素中只包含了浮动元素，浮动元素的高度并不能赋予该元素，所以该元素的高度会「坍塌」。</p>
+<p><strong>Reason for Q2</strong> —— CSS 的 float 属性指定一个元素应沿其容器的左侧或右侧放置，允许文本和内联元素环绕它。使用 float 会使元素脱离正常的文档流，其他盒子会无视这个元素，但其他盒子内的文本依然会为这个元素让出位置，环绕在周围。</p>
+<h1 id="3-解决方法"><a href="#3-解决方法" class="headerlink" title="3. 解决方法"></a>3. 解决方法</h1><p><strong>Way for Q1</strong> 具体如下：<br>① 给父元素添加一个名为 clearfix 的 class 类，并进行以下CSS设置。<br><img src="/images/problem_float/solved_float_Q1_1.jpg" alt=""><br>② 为父元素添加 <code>overflow: hidden;</code> 或者 <code>overflow: auto;</code> 规则触发 BFC（块级格式化上下文），而计算 BFC 的高度时，浮动元素也参与计算。<br>③ 可以将父元素也设置 float 属性，将其也变成浮动元素。<br>④ 显式地为父元素添加高度，但是并不是一种合适的方法。<br><img src="/images/problem_float/solved_float_Q1_2.jpg" alt=""><br><strong>Way for Q2</strong> —— 在浮动元素之后的元素设置 <code>clear: left;</code> 规则以清除左边浮动。</p>
 
       
     </div>
@@ -422,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/17/CSS之选择器/" rel="next" title="CSS 之选择器">
-                <i class="fa fa-chevron-left"></i> CSS 之选择器
+              <a href="/2018/10/30/CSS之盒模型/" rel="next" title="CSS 之盒模型">
+                <i class="fa fa-chevron-left"></i> CSS 之盒模型
               </a>
             
           </div>
@@ -431,10 +426,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/12/CSS之三栏式布局/" rel="prev" title="CSS 之三栏式布局">
-                CSS 之三栏式布局 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -583,7 +574,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-特殊性"><span class="nav-text">1. 特殊性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-继承"><span class="nav-text">2. 继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-层叠"><span class="nav-text">3. 层叠</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-问题的出现"><span class="nav-text">1. 问题的出现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-原因"><span class="nav-text">2. 原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-解决方法"><span class="nav-text">3. 解决方法</span></a></li></ol></div>
             
 
           </div>
