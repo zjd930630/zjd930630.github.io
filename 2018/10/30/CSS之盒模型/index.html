@@ -118,7 +118,7 @@
 <meta property="og:image" content="http://yoursite.com/images/css_box/css_box_overflow_1.jpg">
 <meta property="og:image" content="http://yoursite.com/images/css_box/css_box_overflow_2.jpg">
 <meta property="og:image" content="http://yoursite.com/images/css_box/css_box_box-sizing.jpg">
-<meta property="og:updated_time" content="2018-10-31T08:24:11.514Z">
+<meta property="og:updated_time" content="2018-11-07T11:36:58.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 之盒模型">
 <meta name="twitter:description" content="盒模型是CSS中的一个重要概念，它是元素大小的呈现方式。Every Element In Web Design Is A Rectangular Box.">
@@ -389,7 +389,7 @@
 
       
         <p>盒模型是CSS中的一个重要概念，它是元素大小的呈现方式。Every Element In Web Design Is A Rectangular Box.<br><a id="more"></a></p>
-<h1 id="1-一些基本概念"><a href="#1-一些基本概念" class="headerlink" title="1. 一些基本概念"></a>1. 一些基本概念</h1><p>在学习盒模型之前，需要了解一些有关盒子的基本概念，有助于帮我们更好地理解盒模型的内容。<br>① 非替换元素：如果元素的内容包含在文档中，则称之为非替换元素。<br>② 替换元素：指用作为其他内容占位符的一个元素，最典型的例子就是 img 元素。<br>③ 块级元素：这类元素在正常流中时，会在其框之前和之后生成「换行」，所以处以正常流中的块级元素会垂直摆放。<br>④ 行内元素：这类元素不会之前和之后生成「行分隔符」，他们是块级元素的后代。行内元素可以继承块元素，反之则不允许。</p>
+<h1 id="1-一些基本概念"><a href="#1-一些基本概念" class="headerlink" title="1. 一些基本概念"></a>1. 一些基本概念</h1><p>在学习盒模型之前，需要了解一些有关盒子的基本概念，有助于帮我们更好地理解盒模型的内容。<br>① 非替换元素：如果元素的内容包含在文档中，则称之为非替换元素。<br>② 替换元素：指用作为其他内容占位符的一个元素，最典型的例子就是 img 元素。<br>③ 块级元素：这类元素在正常流中时，会在其框之前和之后生成「换行」，所以处以正常流中的块级元素会垂直摆放。<br>④ 行内元素：这类元素不会之前和之后生成「行分隔符」，他们是块级元素的后代。行内元素可以继承块元素，反之则不允许。<br>⑤ em 框：即字符框，在 CSS 中，<code>font-size</code> 的值确定了各个 em 框的高度。<br>⑥ 内容区：在非替换元素中，是元素中各字符的 em 框串在一起构成的框；在替换元素中，内容区就是元素的固有高度再加上可能有的外边距、边框或内边距。<br>⑦ 行内框：对于非替换元素，元素行内框的高度刚好等于 <code>line-height</code> 的值；对于替换元素，元素行内框的高度则恰好等于内容区高度。<br>⑧ 行框：为该行中出现的行内框的最高点和最低点的最小框。</p>
 <h1 id="2-盒类型"><a href="#2-盒类型" class="headerlink" title="2. 盒类型"></a>2. 盒类型</h1><p>CSS 可以使用属性 display 来影响元素的显示方式。<br><img src="/images/css_box/css_box_display.jpg" alt=""><br>下面主要介绍几种常用的元素显示方式：<br>① inline：元素作为行内元素显示。<br>② block：元素作为块状元素显示。<br>③ inline-block：元素为块状元素和行内元素的混合。他会作为替换元素放置于行中；在行内块元素内部，会像块级元素一样设置内容的格式。<br>④ run-in：使某些块级元素作为下一个元素的行内部分。只有当 run-in 框后面是一个块级框时 run-in 才会起作用。<br>⑤ list-item：将元素作为列表来显示，并可以为其添加列表样式。<br>⑥ none：即关闭一个元素的显示。当你使用 none 时，其所有后代元素的显示也会被关闭。</p>
 <h1 id="3-盒模型"><a href="#3-盒模型" class="headerlink" title="3. 盒模型"></a>3. 盒模型</h1><p>一个完整的盒模型由外而内包括：边距（margin）、边框（border）、填充（padding）、内容（content）。<br><img src="/images/css_box/css_box_box-model.jpg" alt=""></p>
 <h2 id="3-1-元素的宽度和高度"><a href="#3-1-元素的宽度和高度" class="headerlink" title="3.1 元素的宽度和高度"></a>3.1 元素的宽度和高度</h2><h3 id="3-1-1-width"><a href="#3-1-1-width" class="headerlink" title="3.1.1 width"></a>3.1.1 width</h3><p>width 定义了内容区的宽度。正常流中块级元素的水平部分总和就等于父元素的 width。<br><img src="/images/css_box/css_box_width.jpg" alt=""><br>水平格式化的 7 大属性为：<code>margin-left</code>、<code>border-left</code>、<code>padding-left</code>、<code>width</code>、<code>margin-right</code>、<code>border-right</code> 和 <code>padding-right</code>。这 7 个属性中，只有 3 个属性可以设置为 auto：元素内容的 width，以及左、右外边距。<br>下面列举了水平属性使用 auto 的几种情况：<br>① 如果设置 <code>width</code>、<code>margin-left</code>、<code>margin-right</code> 中的某个值为 auto，而余下两个属性指定为特定的值，那么设置为 auto 的属性会确定所需的长度，从而使元素框的宽度等于父元素的 width。<br>② 如果这 3 个值都设置为非 auto 的某个值，CSS 称之为「过分受限」，此时总会将 <code>margin-right</code> 的值强制为 auto。<br>③ 如果两个外边距都显式地设置，而 width 设置为 auto，width 值将设置为所需的某个值，从而达到需要的总宽度（即父元素的内容宽度）。<br>④ 如果两个外边距都设置为 auto，他们会设置为相等的长度，从而使元素在其父元素中居中。<br>⑤ 若将某个外边距以及 width 值设置为 auto，设置为 auto 的外边距会减为 0。<br>⑥ 若 3 个元素都设置为 auto，两个外边距都会设置成 0，而 width 会尽可能地宽。<br>⑦ 若替换元素的 width 值为 auto，元素的宽度则是内容的固有宽度。</p>
@@ -542,7 +542,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

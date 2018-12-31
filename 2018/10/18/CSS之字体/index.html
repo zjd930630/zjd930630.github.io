@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://yoursite.com/images/css_font/css_font_font-size-adjust.jpg">
 <meta property="og:image" content="http://yoursite.com/images/css_font/css_font_font.jpg">
 <meta property="og:image" content="http://yoursite.com/images/css_font/css_font_font_wrong.jpg">
-<meta property="og:updated_time" content="2018-10-26T11:38:15.946Z">
+<meta property="og:updated_time" content="2018-12-29T08:02:14.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 之字体">
 <meta name="twitter:description" content="设置字体属性是 CSS 样式表最常见的用途之一。为你的页面选择合适的字体以及样式能增强读者的用户体验。">
@@ -380,7 +380,7 @@
 
       
         <p>设置字体属性是 CSS 样式表最常见的用途之一。为你的页面选择合适的字体以及样式能增强读者的用户体验。<br><a id="more"></a></p>
-<h1 id="1-字体类型"><a href="#1-字体类型" class="headerlink" title="1. 字体类型"></a>1. 字体类型</h1><p>在 CSS 中，有两种不同类型的字体系列名称：<br><strong>(1)</strong> 通用字体系列 —— 拥有相似外观的字体系统组合（例如 “Serif” 或 “Cursive”）<br>CSS 定义了 5 种通用字体系列。<br>① Serif 字体（衬线字体）：字体成比例，而且有上下短线装饰。<br>② Sans-serif 字体（非衬线字体）：字体成比例，但是没有有上下短线装饰。<br>③ Monospace 字体（等宽字体）：每个字符的宽度都是一样的。<br>④ Cursive 字体（草书字体）：手写体的一种模仿。<br>⑤ Fantasy 字体（虚幻字体）：无法用任何特征来定义。<br><img src="/images/css_font/css_font_fonts.jpg" alt=""><br><strong>(2)</strong> 特定字体系列 —— 具体的字体系列（例如 “Times” 或 “Arial”）</p>
+<h1 id="1-字体类型"><a href="#1-字体类型" class="headerlink" title="1. 字体类型"></a>1. 字体类型</h1><p>在 CSS 中，有两种不同类型的字体系列名称：<br><strong>(1)</strong> 通用字体系列 —— 拥有相似外观的字体系统组合（例如 “Serif” 或 “Cursive”）<br>CSS 定义了 5 种通用字体系列：<br>① Serif 字体（衬线字体）：字体成比例，而且有上下短线装饰。<br>② Sans-serif 字体（非衬线字体）：字体成比例，但是没有有上下短线装饰。<br>③ Monospace 字体（等宽字体）：每个字符的宽度都是一样的。<br>④ Cursive 字体（草书字体）：手写体的一种模仿。<br>⑤ Fantasy 字体（虚幻字体）：无法用任何特征来定义。<br><img src="/images/css_font/css_font_fonts.jpg" alt=""><br><strong>(2)</strong> 特定字体系列 —— 具体的字体系列（例如 “Times” 或 “Arial”）</p>
 <h1 id="2-字体属性"><a href="#2-字体属性" class="headerlink" title="2. 字体属性"></a>2. 字体属性</h1><h2 id="2-1-使用指定字体"><a href="#2-1-使用指定字体" class="headerlink" title="2.1 使用指定字体"></a>2.1 使用指定字体</h2><h3 id="2-1-1-font-family"><a href="#2-1-1-font-family" class="headerlink" title="2.1.1 font-family"></a>2.1.1 font-family</h3><p>CSS 属性 <code>font-family</code> 允许您通过给定一个有先后顺序的，由字体名或者字体族名组成的列表来为选定的元素设置字体。<br><img src="/images/css_font/css_font_family.jpg" alt=""><br><code>font-family</code> 属性有 2 种值可选：<br>① family-name：即字体名称，可以使用多个字体名称，用空格分隔。<br>② inherit：继承父元素的字体。  </p>
 <p>尽管 <code>font-family</code> 属性能帮你把任何字体应用到文章中，但是使用中还需要注意以下几点：<br>① 为了避免用户代理无法提供与规则匹配的特定字体，我们最好在所有的 <code>font-family</code> 属性中都提供一个通用字体。<code>font-family</code> 支持我们一次性指定多种字体并为其创建一个优先次序（我们称之为「字体堆栈」）。<br>② 当一个字体名中有一个或者多个空格（如 New York），或者如果字体名包括 <code>#</code> 或 <code>$</code> 之类的符号，需要在 <code>font-family</code> 声明中加引号（单双引号都可以）；如果 <code>font-family</code> 被双引号括起，就必须在规则内部使用单引号。<br>③ 说到字体可用性，只有某几个字体通常可以应用到所有系统，因此可以毫无顾忌地使用。这些都是所谓的「网页安全字体」。在各种资源中，<a href="https://www.cssfontstack.com/" target="_blank" rel="external">cssfontstack.com</a> 网站维护了一个可用在 Windows 和 Mac 操作系统上使用的网页安全字体的列表，这可以帮助决策网站的安全性。<br><img src="/images/css_font/css_font_family_rule.jpg" alt=""></p>
 <h3 id="2-1-2-font-face"><a href="#2-1-2-font-face" class="headerlink" title="2.1.2 @font-face"></a>2.1.2 @font-face</h3><p><code>@font-face</code> 通过指定字体的下载地址（当这种字体在用户的计算机上没有安装时，就会自动下载）来让你调用字体，即便用户在浏览时使用的计算机上没有安装相应的字体也可以使用。<br><code>@font-face</code> 一般有三个属性 <code>font-family</code>、<code>src</code>、<code>format</code>。<br>① <code>font-family</code> 属性指定了字体的名称。<br>② <code>src</code>指定了字体的路径。它可以是远程字体文件位置的URL或者用户计算机上的字体名称， 也可以使用 local 语法通过名称指定用户的本地计算机上的字体(例如 <code>src: local(&#39;Arial&#39;);</code>）。 为兼容所有浏览器，你可能需要提供字体多种不同版本的路径。<br>③ <code>format</code>指定了字体的格式。一般包括 eot、woof、ttf / otf、svg 这几种。<br>④ 其他还能在 <code>@font-face</code> 中指定的属性值有 <code>font-style</code>、<code>font-size</code>、<code>font-variant</code>、<code>font-weight</code>、<code>font-stretch</code>。<br><img src="/images/css_font/css_font_font-face.jpg" alt=""></p>
@@ -523,7 +523,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
